@@ -1,0 +1,18 @@
+<h1><%= @list.name %></h1>
+
+<%= render 'bookmarks/form' %>
+
+<% @list.movies.each do |movie| %>
+  <div>
+    <img src="<%= movie.poster_url %>" alt="movie poster">
+    <%= movie.title %>
+    <%= movie.overview %>
+    <%= movie.rating %>
+  <div>
+  <div>
+    <h3>Comments</h3>
+      <% movie.bookmarks.each do |bookmark| %>
+        <%= bookmark.comment %>
+      <% end %>
+  </div>
+<% end %>
