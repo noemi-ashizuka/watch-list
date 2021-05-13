@@ -9,16 +9,16 @@
       <div class="movie-card">
         <img src="<%= movie.poster_url %>" alt="movie poster" class="movie-image">
         <div class="movie-info">
-          <%= movie.title %>
+          <h3><%= movie.title %></h3>
           <%= movie.rating %>
-        </div>
-        <div class="overview">
-          <%= movie.overview %>
         </div>
         <div class="movie-comments">
             <% movie.bookmarks.each do |bookmark| %>
-              <%= bookmark.comment %>
+              <i class="fas fa-quote-left"></i> <%= bookmark.comment %>
             <% end %>
+        </div>
+        <div class="overview">
+          <%= movie.overview %>
         </div>
       </div> <!-- movie-card-->
     <% end %>

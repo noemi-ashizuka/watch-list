@@ -36,7 +36,14 @@
       max-height: 100%;
       transform: translateY(101%);
       overflow-y: auto;
-      transition: transform 0.3s ease-in;
+      transition: transform 0.5s ease-in;
+    }
+
+    .movie-comments {
+      font-style: italic;
+      opacity: 0.7;
+      padding: 1.2rem;
+      color: #eee;
     }
   }
 
@@ -44,5 +51,3 @@
     transform: translateY(0);
   }
 }
-
-
