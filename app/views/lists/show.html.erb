@@ -1,18 +1,27 @@
-<h1><%= @list.name %></h1>
+<div class="container">
+  
+  <h1><%= @list.name %></h1>
 
-<%= render 'bookmarks/form' %>
+  <%= render 'bookmarks/form' %>
 
-<% @list.movies.each do |movie| %>
-  <div>
-    <img src="<%= movie.poster_url %>" alt="movie poster">
-    <%= movie.title %>
-    <%= movie.overview %>
-    <%= movie.rating %>
-  <div>
-  <div>
-    <h3>Comments</h3>
-      <% movie.bookmarks.each do |bookmark| %>
-        <%= bookmark.comment %>
-      <% end %>
-  </div>
-<% end %>
+  <div class="movies-list">
+    <% @list.movies.each do |movie| %>
+      <div class="movie-card">
+        <img src="<%= movie.poster_url %>" alt="movie poster" class="movie-image">
+        <div class="movie-info">
+          <%= movie.title %>
+          <%= movie.rating %>
+        </div>
+        <div class="overview">
+          <%= movie.overview %>
+        </div>
+        <div class="movie-comments">
+            <% movie.bookmarks.each do |bookmark| %>
+              <%= bookmark.comment %>
+            <% end %>
+        </div>
+      </div> <!-- movie-card-->
+    <% end %>
+  </div> <!-- movie-list-->
+
+</div> <!-- container -->
