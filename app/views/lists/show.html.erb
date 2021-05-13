@@ -10,7 +10,7 @@
         <img src="<%= movie.poster_url %>" alt="movie poster" class="movie-image">
         <div class="movie-info">
           <h3><%= movie.title %></h3>
-          <%= movie.rating %>
+          <span class="rating"><%= movie.rating %></span>
         </div>
         <div class="movie-comments">
             <% movie.bookmarks.each do |bookmark| %>
@@ -25,3 +25,5 @@
   </div> <!-- movie-list-->
 
 </div> <!-- container -->
+
+<%= javascript_pack_tag 'color_rating' %>
