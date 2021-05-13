@@ -1,6 +1,9 @@
 require 'rest-client'
 
+Bookmark.destroy_all
+List.destroy_all
 Movie.destroy_all
+
 
 url = 'http://tmdb.lewagon.com/movie/top_rated'
 
