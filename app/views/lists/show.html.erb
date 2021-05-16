@@ -1,12 +1,23 @@
-<div class="container">
   
+    
+<% if @list.photo.attached? %>
+  <div class="page-header-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 400, width: 800, crop: :fill %>')">
+    <div class="page-header-banner-content" >
+      <h1><%= @list.name %></h1>
+    </div>
+  </div>
+<% else %>
+    <div class="page-header-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1334&q=80')">
+    <div class="page-header-banner-content" >
+      <h1><%= @list.name %></h1>
+    </div>
+  </div>
+<% end %>
+
+<div class="container">
   <div class="page-header">
-    <h1><%= @list.name %></h1>
-    <% if @list.photo.attached? %>
-      <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
     <button type="button" class="btn btn-blue" data-toggle="modal" data-target="#exampleModal">
-      Bookmark a movie
+        Bookmark a movie
     </button>
   </div>
 
@@ -33,7 +44,9 @@
       <div class="movie-card">
         <img src="<%= movie.poster_url %>" alt="movie poster" class="movie-image">
         <div class="movie-info">
-          <h3><%= movie.title %></h3>
+          <div class="title-wrapper">
+            <h3><%= movie.title %></h3>
+          </div>
           <span class="rating"><%= movie.rating %></span>
         </div>
         <div class="movie-comments">

@@ -21,10 +21,6 @@ body {
 
   .page-header {
     display: flex;
-    justify-content: space-between;
-
-    h1 {
-      color: #233045;
-    }
+    justify-content: flex-end;
   }
 }
