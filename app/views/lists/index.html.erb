@@ -8,9 +8,17 @@
 
 
 <div class="container">
-  <h1>All lists</h1>
+  <div class="page-header-spaced">
+    <h1>All lists</h1>
+    <%= link_to '#list-form' do %>
+      <button class="btn btn-blue">
+        Create a new List
+      </button>
+    <% end %>
+        
+  </div>
 
-  <div class="list-card-container">
+  <div class="list-card-container" id="list-form">
     <% @lists.each do |list| %>
       <% if list.photo.attached? %>
         <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path list.photo.key, height: 300, width: 400, crop: :fill %>')">
@@ -24,6 +32,9 @@
     <% end %>
   </div>
   
-  <%= render 'form' %>
+  <div class="form-container">
+    <h3>Create a new List</h3>
+    <%= render 'form' %>
+  </div>
   
 </div>

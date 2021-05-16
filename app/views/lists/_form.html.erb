@@ -1,7 +1,7 @@
-<h3>Create a new List</h3>
-
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="form-styled">
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name, class: "form-input-small" %>
+    <%= f.input :photo, as: :file, class: 'photo-button' %>
+    <%= f.submit class: 'btn btn-blue' %>
+  <% end %>
+</div>

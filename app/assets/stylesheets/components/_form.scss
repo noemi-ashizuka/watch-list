@@ -1,0 +1,18 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  padding: 24px;
+  width: 100%;
+
+  .form-styled {
+    background-color: $light-gray;
+    border-radius: 2px;
+    border: 1px solid $accent-blue;
+    padding: 32px;
+    width: 50%;
+  }
+}
+
