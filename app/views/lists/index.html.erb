@@ -1,7 +1,25 @@
-<h1>All lists</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1505686994434-e3cc5abf1330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2104&q=80')">
 
-<% @lists.each do |list| %>
-  <h3><%= link_to list.name, list_path(list) %></h3>
-<% end %>
+  <div class="banner-text">
+    <h1>Curated movie lists</h1>
+    <h3>Find the perfect movie for your movie night</h3>
+  </div>
 
-<%= render 'form' %>
+</div>
+
+
+<div class="container">
+  <h1>All lists</h1>
+
+  <div class="list-card-container">
+    <% @lists.each do |list| %>
+      <% if list.photo.attached? %>
+        <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <h3><%= link_to list.name, list_path(list) %></h3>
+    <% end %>
+  </div>
+  
+  <%= render 'form' %>
+  
+</div>

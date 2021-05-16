@@ -1,0 +1,19 @@
+.banner {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  background-size: cover;
+  background-position: 50% 50%;
+  justify-content: center;
+  align-items: center;
+  
+  .banner-text {
+    color: #fff;
+    text-shadow: 1px 1px rgba(1,1,1,0.2);
+    
+    h1 {
+      font-size: 56px;
+      font-family: 'Girassol', 'cursive';
+    }
+  }
+}

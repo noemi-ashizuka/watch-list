@@ -34,5 +34,6 @@ module RailsWatchList
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.action_view.form_with_generates_remote_forms = false
   end
 end

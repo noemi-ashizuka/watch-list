@@ -15,3 +15,16 @@
 body {
   background-color: rgb(172, 178, 189);
 }
+
+.container {
+  margin-top: 2em;
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      color: #233045;
+    }
+  }
+}

@@ -1,9 +1,14 @@
 <div class="container">
   
-  <h1><%= @list.name %></h1>
-  <button type="button" class="btn btn-blue" data-toggle="modal" data-target="#exampleModal">
-    Bookmark a movie
-  </button>
+  <div class="page-header">
+    <h1><%= @list.name %></h1>
+    <% if @list.photo.attached? %>
+      <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    <button type="button" class="btn btn-blue" data-toggle="modal" data-target="#exampleModal">
+      Bookmark a movie
+    </button>
+  </div>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -14,13 +19,14 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <%= render 'bookmarks/form' %>
-        </div>
+        <div class="modal-body" id='bookmark_form'>
+          <%= turbo_frame_tag 'bookmark' do %>
+            <%= render 'bookmarks/form' %>
+          <% end %>
+        </div>       
       </div>
     </div>
   </div>
- 
 
   <div class="movies-list">
     <% @list.movies.each do |movie| %>

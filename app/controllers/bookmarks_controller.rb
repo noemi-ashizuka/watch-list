@@ -3,10 +3,12 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(bookmark_params)
     @list = List.find(params[:list_id])
     @bookmark.list = @list
-    if @bookmark.save
-      redirect_to list_path(@list)
-    else
-      render 'lists/show'
+    respond_to do |format|
+      if @bookmark.save
+        format.html { redirect_to list_path(@list) }
+      else
+        format.html { render template: 'lists/show', status: :unprocessable_entity }
+      end
     end
   end
 
