@@ -23,4 +23,13 @@ body {
     display: flex;
     justify-content: flex-end;
   }
+
+  .page-header-spaced {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      color: $almost-white;
+    }
+  }
 }
