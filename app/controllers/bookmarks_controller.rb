@@ -7,6 +7,10 @@ class BookmarksController < ApplicationController
       if @bookmark.save
         format.html { redirect_to list_path(@list) }
       else
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(
+          'bookmark_form',
+          partial: "form",
+          locals: { bookmark: @bookmark, list: @list }) }
         format.html { render template: 'lists/show', status: :unprocessable_entity }
       end
     end

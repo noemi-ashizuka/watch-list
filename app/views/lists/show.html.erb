@@ -31,8 +31,10 @@
           </button>
         </div>
         <div class="modal-body" id='bookmark_form'>
-          <%= turbo_frame_tag 'bookmark' do %>
-            <%= render 'bookmarks/form' %>
+          <%= turbo_frame_tag 'bookmark', target: '_top' do %>
+            
+              <%= render 'bookmarks/form' %>
+   
           <% end %>
         </div>       
       </div>
@@ -40,7 +42,7 @@
   </div>
 
   <div class="movies-list">
-    <% @list.movies.each do |movie| %>
+    <% @movies_list.each do |movie| %>
       <div class="movie-card">
         <img src="<%= movie.poster_url %>" alt="movie poster" class="movie-image">
         <div class="movie-info">
