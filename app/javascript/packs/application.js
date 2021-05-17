@@ -18,6 +18,6 @@ ActiveStorage.start()
 
 document.addEventListener('turbo:load', () => {
   // Call your functions here, e.g:
-  console.log('turbo')
+  // console.log('turbo')
   AOS.init();
 });
