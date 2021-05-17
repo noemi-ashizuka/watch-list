@@ -1,5 +1,3 @@
-  
-    
 <% if @list.photo.attached? %>
   <div class="page-header-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 400, width: 800, crop: :fill %>')">
     <div class="page-header-banner-content" >
@@ -35,36 +33,43 @@
     </div>
   </div>
 
-  
-  <div class="movies-list">
-    <% @movies_list.each do |bookmark| %>
-      <div class="movie-card">
-        <img src="<%= bookmark.movie.poster_url %>" alt="movie poster" class="movie-image">
-        <div class="movie-info">
-          <div class="title-wrapper">
-            <h3><%= bookmark.movie.title %></h3>
-          </div>
-          <span class="rating"><%= bookmark.movie.rating %></span>
-        </div>
-        <div class="movie-comments">
-          <i class="fas fa-quote-left"></i> <%= bookmark.comment %>
-        </div>
-        <div class="overview">
-          <%= bookmark.movie.overview %>
-        </div>
-      </div> <!-- movie-card-->
-    <% end %>
-  </div> <!-- movie-list-->
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-10">
+      <div class="movies-list">
+        <% @movies_list.each do |bookmark| %>
+          <div class="movie-card">
+            <img src="<%= bookmark.movie.poster_url %>" alt="movie poster" class="movie-image">
+            <div class="movie-info">
+              <div class="title-wrapper">
+                <h3><%= bookmark.movie.title %></h3>
+              </div>
+              <span class="rating"><%= bookmark.movie.rating %></span>
+            </div>
+            <div class="movie-comments">
+              <i class="fas fa-quote-left"></i> <%= bookmark.comment %>
+            </div>
+            <div class="overview">
+              <%= bookmark.movie.overview %>
+            </div>
+          </div> <!-- movie-card-->
+        <% end %>
+      </div> <!-- movie-list-->
+    </div> <!-- movie col -->
+
+    <div class="col-12 col-sm-12 col-md-2">
+      <%= render 'reviews/form' %>
+
+      <%= turbo_frame_tag 'review_messages' do %>
+        <% @list.reviews.order(created_at: :desc).each do |review| %>
+          <%= render 'reviews/review_message', review: review %>
+        <% end %>
+      <% end %>
+    </div> <!-- review col -->
+  </div> <!-- row -->
 
 </div> <!-- container -->
 
 
-<%= render 'reviews/form' %>
 
-<% @list.reviews.each do |review| %>
-  <%= review.content %>
-  <%= review.rating %>
-<% end %>
+
 <%= javascript_pack_tag 'color_rating' %>
-
-

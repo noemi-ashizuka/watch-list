@@ -1,11 +1,5 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-4">
-      <%= simple_form_for [@list, @review] do |f| %>
-        <%= f.input :rating, collection: (1..5).to_a, label: "Rate this movie list" %>
-        <%= f.input :content, label: 'Tell us what you think' %>
-        <%= f.submit "Send your review" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= simple_form_for [@list, @review] do |f| %>
+  <%= f.input :rating, collection: (1..5).to_a, label: "Rate this movie list" %>
+  <%= f.input :content, label: 'Tell us what you think' %>
+  <%= f.submit "Send your review" %>
+<% end %>

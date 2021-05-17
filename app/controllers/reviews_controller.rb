@@ -7,11 +7,19 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     list = params[:list_id]
     @review.list = List.find(list)
-    if @review.save
-      redirect_to list_path(list)
-    else
-      flash[:alert] = "Something went wrong."
-      render :new
+    respond_to do |format|
+      if @review.save
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.prepend(
+            'review_messages',
+            partial: 'reviews/review_message',
+            locals: { review: @review }
+          )
+        end
+        format.html { redirect_to list_path(@list) }
+      else
+        format.html { render template: 'bookmarks/modal', status: :unprocessable_entity }
+      end
     end
   end
 
