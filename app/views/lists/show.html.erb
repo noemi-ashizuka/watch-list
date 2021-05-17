@@ -41,23 +41,22 @@
     </div>
   </div>
 
+  
   <div class="movies-list">
-    <% @movies_list.each do |movie| %>
+    <% @movies_list.each do |bookmark| %>
       <div class="movie-card">
-        <img src="<%= movie.poster_url %>" alt="movie poster" class="movie-image">
+        <img src="<%= bookmark.movie.poster_url %>" alt="movie poster" class="movie-image">
         <div class="movie-info">
           <div class="title-wrapper">
-            <h3><%= movie.title %></h3>
+            <h3><%= bookmark.movie.title %></h3>
           </div>
-          <span class="rating"><%= movie.rating %></span>
+          <span class="rating"><%= bookmark.movie.rating %></span>
         </div>
         <div class="movie-comments">
-            <% movie.bookmarks.each do |bookmark| %>
-              <i class="fas fa-quote-left"></i> <%= bookmark.comment %>
-            <% end %>
+          <i class="fas fa-quote-left"></i> <%= bookmark.comment %>
         </div>
         <div class="overview">
-          <%= movie.overview %>
+          <%= bookmark.movie.overview %>
         </div>
       </div> <!-- movie-card-->
     <% end %>
