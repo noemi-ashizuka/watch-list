@@ -3,7 +3,7 @@ function colorRating() {
   ratings.forEach((rating) => {
     if(rating.innerText >= 8) {
       rating.classList.add('green')
-    } else if(rating >= 5) {
+    } else if(rating.innerText >= 5) {
       rating.classList.add('orange')
     } else {
       rating.classList.add('red')
