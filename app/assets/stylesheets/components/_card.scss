@@ -89,6 +89,13 @@
   display: flex;
   flex-wrap: wrap;
   // justify-content: center;
+  a {
+    text-decoration: none;
+  }
+
+  h3 {
+    color: $almost-white;
+  }
 
   .list-card {
     background-size: cover;
