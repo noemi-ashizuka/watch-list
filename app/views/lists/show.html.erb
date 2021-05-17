@@ -30,13 +30,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id='bookmark_form'>
-          <%= turbo_frame_tag 'bookmark', target: '_top' do %>
-            
-              <%= render 'bookmarks/form' %>
-   
-          <% end %>
-        </div>       
+          <%= render 'bookmarks/modal' %>     
       </div>
     </div>
   </div>

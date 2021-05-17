@@ -9,9 +9,9 @@ class BookmarksController < ApplicationController
       else
         format.turbo_stream { render turbo_stream: turbo_stream.replace(
           'bookmark_form',
-          partial: 'form',
+          partial: 'bookmarks/modal',
           locals: { bookmark: @bookmark, list: @list }) }
-        format.html { render template: 'lists/show', status: :unprocessable_entity }
+        format.html { render template: 'bookmarks/modal', status: :unprocessable_entity }
       end
     end
   end

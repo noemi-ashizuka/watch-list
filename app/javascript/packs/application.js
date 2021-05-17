@@ -8,16 +8,17 @@ import "@hotwired/turbo-rails"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import { initAOS } from '../plugins/init_aos'
+import { initSelect2 } from '../plugins/init_select2'
+ 
 
 Rails.start()
-// AOS.init();
 ActiveStorage.start()
 
 
 document.addEventListener('turbo:load', () => {
   // Call your functions here, e.g:
   // console.log('turbo')
-  AOS.init();
+  initSelect2();
+  initAOS();
 });
