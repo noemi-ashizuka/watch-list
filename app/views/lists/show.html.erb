@@ -58,4 +58,13 @@
 
 </div> <!-- container -->
 
+
+<%= render 'reviews/form' %>
+
+<% @list.reviews.each do |review| %>
+  <%= review.content %>
+  <%= review.rating %>
+<% end %>
 <%= javascript_pack_tag 'color_rating' %>
+
+

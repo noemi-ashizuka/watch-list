@@ -10,6 +10,7 @@ import "channels"
 import "bootstrap"
 import { initAOS } from '../plugins/init_aos'
 import { initSelect2 } from '../plugins/init_select2'
+import { initStarRating } from '../plugins/init_star_rating';
 
 Rails.start()
 ActiveStorage.start()
@@ -20,4 +21,5 @@ document.addEventListener('turbo:load', () => {
   // console.log('turbo')
   initSelect2();
   initAOS();
+  initStarRating();
 });
