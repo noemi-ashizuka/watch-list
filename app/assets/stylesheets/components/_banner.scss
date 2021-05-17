@@ -30,5 +30,9 @@
   .page-header-banner-content {
     color: $almost-white;
     text-shadow: 1px 1px rgba(1,1,1,0.2);
+
+    h1 {
+      font-family: 'Girassol', cursive;
+    }
   }
 }
