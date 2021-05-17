@@ -10,7 +10,6 @@ import "channels"
 import "bootstrap"
 import { initAOS } from '../plugins/init_aos'
 import { initSelect2 } from '../plugins/init_select2'
- 
 
 Rails.start()
 ActiveStorage.start()

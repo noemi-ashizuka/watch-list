@@ -6,18 +6,4 @@
       <%= f.submit class: 'btn btn-blue' %>
     <% end %>    
   <% end %>
-</div>  
-
-<template>
-  <turbo-stream target="post_form" action="replace">
-    <div class="modal-body" id='bookmark_form'>
-      <%= turbo_frame_tag 'bookmark', target: '_top' do %>
-        <%= simple_form_for [@list, @bookmark] do |f| %>
-          <%= f.association :movie, input_html: { class: 'select2' } %>
-          <%= f.input :comment, as: :text %>
-          <%= f.submit class: 'btn btn-blue' %>
-        <% end %>
-      <% end %>
-    </div>  
-  </turbo-stream>
-</template>
+</div>

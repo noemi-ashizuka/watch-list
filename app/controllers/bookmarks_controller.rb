@@ -7,10 +7,13 @@ class BookmarksController < ApplicationController
       if @bookmark.save
         format.html { redirect_to list_path(@list) }
       else
-        format.turbo_stream { render turbo_stream: turbo_stream.replace(
-          'bookmark_form',
-          partial: 'bookmarks/modal',
-          locals: { bookmark: @bookmark, list: @list }) }
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace(
+            'bookmark_form',
+            partial: 'bookmarks/modal',
+            locals: { bookmark: @bookmark, list: @list }
+          )
+        end
         format.html { render template: 'bookmarks/modal', status: :unprocessable_entity }
       end
     end
