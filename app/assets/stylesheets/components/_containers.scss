@@ -1,4 +1,33 @@
+.container {
+  margin-top: 2em;
+  width: 1200px;
+
+  .page-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .page-header-spaced {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      color: $almost-white;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 1200px;
+  }
+}
+
+
 .reviews-container {
   margin-right: 3rem;
-  margin-top: 3.5rem;
+  margin-top: 4rem;
+  background-color: $dark-blue;
+  color: $almost-white;
+  padding: 16px;
 }

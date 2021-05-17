@@ -17,28 +17,3 @@
 body {
   background-color: rgb(172, 178, 189);
 }
-
-.container {
-  margin-top: 2em;
-  width: 1200px;
-
-  .page-header {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .page-header-spaced {
-    display: flex;
-    justify-content: space-between;
-
-    h1 {
-      color: $almost-white;
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 1200px;
-  }
-}
