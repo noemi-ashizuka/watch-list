@@ -1,0 +1,15 @@
+<div id=<%= dom_id(review) %> class="review-content">
+  <p><%= review.content %></p>
+  <% if review.rating.nil? %>
+    <% 5.times do %>
+      <i class="far fa-star"></i>
+    <% end %>
+  <% else%>
+    <% review.rating.times do %>
+      <i class="fas fa-star"></i>
+    <% end %>
+    <% (5 - review.rating).times do %>
+      <i class="far fa-star"></i>
+    <% end %>
+  <% end %>
+</div>

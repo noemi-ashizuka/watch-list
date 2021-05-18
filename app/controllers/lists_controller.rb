@@ -8,6 +8,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @movies_list = @list.bookmarks.order(created_at: :desc)
     @bookmark = Bookmark.new
+    @review = Review.new
   end
 
   # def new

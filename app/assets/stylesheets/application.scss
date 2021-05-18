@@ -8,6 +8,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import 'select2/dist/css/select2';
+@import "jquery-bar-rating/dist/themes/css-stars.css";
 
 // Your CSS partials
 @import "components/index";
@@ -15,22 +16,4 @@
 
 body {
   background-color: rgb(172, 178, 189);
-}
-
-.container {
-  margin-top: 2em;
-
-  .page-header {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .page-header-spaced {
-    display: flex;
-    justify-content: space-between;
-
-    h1 {
-      color: $almost-white;
-    }
-  }
 }
