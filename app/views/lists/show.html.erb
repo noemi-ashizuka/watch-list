@@ -57,21 +57,22 @@
       </div> <!-- movie-list-->
     </div> <!-- movie col -->
 
+
     <div class="col-12 col-sm-12 col-md-3">
       <div class="reviews-container">
-        <div class="reviews-form">
-          <%= render 'reviews/form' %>
-        </div>
-        <%= turbo_frame_tag 'review_messages' do %>
+        <%= render 'reviews/form' %>
+        
           <div class="reviews-list">
-            <% if @list.reviews.empty? %>
-              <p>Be the first to review this list!</p>
-            <% end %>
-            <% @list.reviews.order(created_at: :desc).each do |review| %>
-              <%= render 'reviews/review_message', review: review %>
+            <%= turbo_frame_tag 'reviews-list' do %>
+              <% if @list.reviews.empty? %>
+                <p>Be the first to review this list!</p>
+              <% end %>
+              <% @list.reviews.order(created_at: :desc).each do |review| %>
+                <%= render 'reviews/review_message', review: review %>
+              <% end %>
             <% end %>
           </div>
-        <% end %>
+
       </div>
     </div> <!-- review col -->
   </div> <!-- row -->

@@ -1,0 +1,7 @@
+<div class="reviews-form">
+  <%= simple_form_for [@list, @review], data: { controller: "reset_form", action: 'turbo:submit-end->reset_form#reset' } do |f| %>
+    <%= f.input :rating, collection: (1..5).to_a, label: "Rate this movie list" %>
+    <%= f.input :content, label: 'Tell us what you think', as: :text, cols: 30, rows: 50 %>
+    <%= f.submit "Publish", class: 'btn btn-blue-slim' %>
+  <% end %>
+</div>
