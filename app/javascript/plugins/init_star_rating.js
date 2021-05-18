@@ -3,7 +3,7 @@ import $ from 'jquery'; // <-- if you're NOT using a Le Wagon template (cf jQuer
 
 const initStarRating = () => {
   $('#review_rating').barrating({
-    theme: 'css-stars' || asset_path('css-stars')
+    theme: 'css-stars'
   });
 };
 
