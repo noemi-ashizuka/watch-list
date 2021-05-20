@@ -1,6 +1,8 @@
 .reviews-form {
   margin-bottom: 2rem;
   margin-top: 1rem;
+  background-color: $dark-blue;
+  padding: 1rem;
 }
 
 
@@ -10,11 +12,13 @@
 
   .review-content {
     width: 100%;
-    background-color: $gray-blue;
-    color: $almost-white;
+    // background-color: $gray-blue;
+    color: $dark-blue;
     // border-bottom: 4px solid $dark-blue;
     border-radius: 2px;
     padding: 8px;
+    padding-bottom: 16px;
     margin-bottom: 8px;
+    border-bottom: 1px solid $dark-blue;
   }
 }

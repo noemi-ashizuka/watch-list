@@ -12,51 +12,39 @@
   </div>
 <% end %>
 
-<div class="container">
+<div class="modal fade" id="bookmark-modal-form" tabindex="-1" aria-labelledby="bookmarkModalFormLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a Movie to <%= @list.name %> list</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <%= render 'bookmarks/modal' %>     
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container"> -->
+<div class="d-flex justify-content-end m-3">
   <div class="page-header">
-    <button type="button" class="btn btn-blue" data-toggle="modal" data-target="#bookmark-modal-form">
+    <button type="button" class="btn btn-blue mr-3" data-toggle="modal" data-target="#bookmark-modal-form">
         Bookmark a movie
     </button>
   </div>
-</div> <!-- container -->
+</div>
+<!-- </div>  container -->
 
-  <div class="modal fade" id="bookmark-modal-form" tabindex="-1" aria-labelledby="bookmarkModalFormLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add a Movie to <%= @list.name %> list</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-          <%= render 'bookmarks/modal' %>     
-      </div>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-12 col-sm-12 col-md-9">
       <div class="movies-list">
         <% @movies_list.each do |bookmark| %>
-          <div class="movie-card">
-            <img src="<%= bookmark.movie.poster_url %>" alt="movie poster" class="movie-image">
-            <div class="movie-info">
-              <div class="title-wrapper">
-                <h3><%= bookmark.movie.title %></h3>
-              </div>
-              <span class="rating"><%= bookmark.movie.rating %></span>
-            </div>
-            <div class="movie-comments">
-              <i class="fas fa-quote-left"></i> <%= bookmark.comment %>
-            </div>
-            <div class="overview">
-              <%= bookmark.movie.overview %>
-            </div>
-          </div> <!-- movie-card-->
+          <%= render 'card', bookmark: bookmark %>
         <% end %>
       </div> <!-- movie-list-->
     </div> <!-- movie col -->
-
 
     <div class="col-12 col-sm-12 col-md-3">
       <div class="reviews-container">
@@ -76,10 +64,5 @@
       </div>
     </div> <!-- review col -->
   </div> <!-- row -->
-
-
-
-
-
 
 <%= javascript_pack_tag 'color_rating' %>

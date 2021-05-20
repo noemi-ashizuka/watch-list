@@ -1,0 +1,15 @@
+<div class="movie-card">
+  <img src="<%= bookmark.movie.poster_url %>" alt="movie poster" class="movie-image">
+  <div class="movie-info">
+    <div class="title-wrapper">
+      <h3><%= bookmark.movie.title %></h3>
+    </div>
+    <span class="rating"><%= bookmark.movie.rating %></span>
+  </div>
+  <div class="movie-comments">
+    <i class="fas fa-quote-left"></i> <%= bookmark.comment %>
+  </div>
+  <div class="overview">
+    <%= bookmark.movie.overview %>
+  </div>
+</div> <!-- movie-card-->
