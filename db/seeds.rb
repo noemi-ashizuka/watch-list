@@ -13,7 +13,7 @@ genres_url = "https://api.themoviedb.org/3/genre/movie/list?api_key=#{ENV['MOVIE
 
 genres_doc = JSON.parse(RestClient.get(genres_url))
 
-genre_ids = genres_doc['genres'].map {|genre| genre['id']}
+genre_ids = genres_doc['genres'].map { |genre| genre['id'] }
 
 puts 'Genres created'
 

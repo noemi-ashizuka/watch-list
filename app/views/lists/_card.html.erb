@@ -1,5 +1,12 @@
 <div class="movie-card">
-  <img src="<%= bookmark.movie.poster_url %>" alt="movie poster" class="movie-image">
+  <div class="movie-image-container">
+    <img src="<%= bookmark.movie.poster_url %>" alt="movie poster" class="movie-image">
+    <span>
+      <%= link_to bookmark_path(bookmark), method: "delete", class: "remove-mark" do %>
+        <i class="far fa-minus-square"></i>
+      <% end %>
+    </span>
+  </div>
   <div class="movie-info">
     <div class="title-wrapper">
       <h3><%= bookmark.movie.title %></h3>
@@ -9,6 +16,7 @@
   <div class="movie-comments">
     <i class="fas fa-quote-left"></i> <%= bookmark.comment %>
   </div>
+  
   <div class="overview">
     <%= bookmark.movie.overview %>
   </div>
