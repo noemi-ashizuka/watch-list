@@ -11,7 +11,7 @@
     <div class="title-wrapper">
       <h3><%= bookmark.movie.title %></h3>
     </div>
-    <span class="rating"><%= bookmark.movie.rating %></span>
+    <span class="rating" data-controller="color-rating" data-color-rating-target="rating"><%= bookmark.movie.rating %></span>
   </div>
   <div class="movie-comments">
     <i class="fas fa-quote-left"></i> <%= bookmark.comment %>
