@@ -1,0 +1,30 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/11702566/pexels-photo-11702566.jpeg?auto=compress&cs=tinysrgb&w=800'); background-position: 60% 30%; height: 300px;">
+
+  <div class="banner-text">
+    <h1>Best rated movies</h1>
+  </div>
+</div> <!-- banner -->
+
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-9">
+    <div class="movies-list">
+      <% @movies.each do |movie| %>
+        <div class="movie-card">
+          <div class="movie-image-container">
+            <img src="<%= movie.poster_url %>" alt="movie poster" class="movie-image">
+          </div>
+          <div class="movie-info">
+            <div class="title-wrapper">
+              <h3><%= movie.title %></h3>
+            </div>
+            <span class="rating" data-controller="color-rating" data-color-rating-target="rating"><%= movie.rating %></span>
+          </div>
+          
+          <div class="overview">
+            <%= movie.overview %>
+          </div>
+        </div> <!-- movie-card-->
+      <% end %>
+    </div> <!-- movie-list-->
+  </div> <!-- movie col -->
+</div><!-- row -->

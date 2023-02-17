@@ -24,6 +24,10 @@ class ListsController < ApplicationController
     end
   end
 
+  def top_five
+    @movies = Movie.order(rating: :desc).take(5)
+  end
+
   private
 
   def list_params
