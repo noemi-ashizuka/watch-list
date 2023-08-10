@@ -7,6 +7,10 @@ development:
   <<: *default
   database: rails-watch-list_development
 
+production:
+  <<: *default
+  database: rails-watch-list_production
+
 test:
   <<: *default
   database: rails-watch-list_test

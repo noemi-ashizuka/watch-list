@@ -3,6 +3,10 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = ['button', 'stars']
   
+  // connect() {
+  //   console.log(this.starsTarget);
+  // }
+
   reset() {
     this.element.reset()
     this.buttonTarget.disabled = false
