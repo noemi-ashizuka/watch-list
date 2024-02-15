@@ -22,9 +22,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "engines": {
-    "node": "20.9.0"
-  },
-  "scripts": {
-    "start": "export NODE_OPTIONS=--openssl-legacy-provider && ng serve"
+    "node": "16.15.1"
   }
 }
