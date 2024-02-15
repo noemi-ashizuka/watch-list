@@ -6,8 +6,8 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @list = params[:list_id]
-    @review.list = List.find(@list)
+    @list = List.find(params[:list_id])
+    @review.list = @list
     respond_to do |format|
       if @review.save
         format.turbo_stream do
@@ -15,6 +15,13 @@ class ReviewsController < ApplicationController
             'reviews-list',
             partial: 'reviews/review_message',
             locals: { review: @review }
+          )
+        end
+        format.turbo_stream do
+         render turbo_stream: turbo_stream.replace(
+            'reviews-form',
+            partial: 'form',
+            locals: { list: @list, review: Review.new }
           )
         end
         format.html { render partial: 'review_message', locals: { review: @review }, status: :ok }

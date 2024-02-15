@@ -1,5 +1,5 @@
 <div class="reviews-form">
-  <%= simple_form_for [@list, @review], data: { controller: "resetform", action: "turbo:submit-end->resetform#reset" } do |f| %>
+  <%= simple_form_for [list, review], data: { action: "turbo:submit-end->resetform#reset" } do |f| %>
     <span data-resetform-target='stars'>
       <%= f.input :rating, collection: (1..5).to_a, label: "Rate this movie list" %>
     </span>

@@ -37,7 +37,7 @@
 <!-- </div>  container -->
 
 
-  <div class="row">
+  <div class="row" data-controller="resetform">
     <div class="col-12 col-sm-12 col-md-9">
       <div class="movies-list">
         <% @movies_list.each do |bookmark| %>
@@ -48,7 +48,7 @@
 
     <div class="col-12 col-sm-12 col-md-3">
       <div class="reviews-container">
-        <%= render 'reviews/form' %>
+        <%= render 'reviews/form', list: @list, review: @review %>
         
           <div class="reviews-list">
             <%= turbo_frame_tag 'reviews-list' do %>

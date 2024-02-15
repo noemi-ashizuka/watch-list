@@ -1,4 +1,5 @@
 require 'rest-client'
+require 'faker'
 
 puts 'Cleaning the db'
 
@@ -41,6 +42,29 @@ movies.flatten.each do |movie_data|
 end
 
 puts "There are #{Movie.count} movies in the database"
+
+puts "Addind Lists..."
+
+classics = List.create(name: "Classics")
+
+5.times do
+  Bookmark.create!(movie: Movie.all.sample, list: classics, comment: Faker::TvShows::Buffy.quote)
+end
+
+anime = List.create(name: "Anime")
+
+
+5.times do
+  Bookmark.create!(movie: Movie.all.sample, list: anime, comment: Faker::TvShows::Buffy.quote)
+end
+
+must_watch = List.create!(name: "Must Watch")
+
+5.times do
+  Bookmark.create!(movie: Movie.all.sample, list: must_watch, comment: Faker::TvShows::Buffy.quote)
+end
+
+puts "There are #{List.count} lists and #{Bookmark.count} bookmarks."
 
 # FROM THE FAKE API
 
