@@ -35,7 +35,7 @@ movies.flatten.each do |movie_data|
       title: movie_data['title'],
       overview: movie_data['overview'],
       poster_url: "https://image.tmdb.org/t/p/w500/#{movie_data['poster_path']}",
-      rating: movie_data['vote_average'].to_f
+      rating: movie_data['vote_average'].to_f.round(1)
     )
   end
   p "Creating #{movie.title}"
