@@ -1,21 +1,21 @@
 @media (max-width: 960px) {
   /* For a screen < 960px, this CSS will be read */
   .list-card {
-    width: 30rem;
+    width: 20rem;
   }
 }
 
 @media (max-width: 720px) {
   /* For a screen < 720px, this CSS will be read */
   .list-card {
-    width: 25rem;
+    width: 18rem;
   }
 }
 
 @media (max-width: 540px) {
   /* For a screen < 540px, this CSS will be read */
   .list-card {
-    width: 50%;
+    width: 100%;
   }
 }
 
@@ -152,12 +152,12 @@
   .list-card {
     background-size: cover;
     background-position: 50% 60%;
-    margin: 16px;
+    margin: 6px;
     border-radius: 2px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    // width: 30rem;
+    // width: 20rem;
     height: 10rem;
 
     a {
