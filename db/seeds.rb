@@ -48,20 +48,20 @@ puts "Addind Lists..."
 classics = List.create(name: "Classics")
 
 5.times do
-  Bookmark.create!(movie: Movie.all.sample, list: classics, comment: Faker::TvShows::Buffy.quote)
+  Bookmark.find_or_create_by!(movie: Movie.all.sample, list: classics, comment: Faker::TvShows::Buffy.quote)
 end
 
 anime = List.create(name: "Anime")
 
 
 5.times do
-  Bookmark.create!(movie: Movie.all.sample, list: anime, comment: Faker::TvShows::Buffy.quote)
+  Bookmark.find_or_create_by!(movie: Movie.all.sample, list: anime, comment: Faker::TvShows::Buffy.quote)
 end
 
 must_watch = List.create!(name: "Must Watch")
 
 5.times do
-  Bookmark.create!(movie: Movie.all.sample, list: must_watch, comment: Faker::TvShows::Buffy.quote)
+  Bookmark.find_or_create_by!(movie: Movie.all.sample, list: must_watch, comment: Faker::TvShows::Buffy.quote)
 end
 
 puts "There are #{List.count} lists and #{Bookmark.count} bookmarks."
