@@ -134,8 +134,9 @@
     margin: 6px;
     border-radius: 2px;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     width: 20rem;
     height: 10rem;
 

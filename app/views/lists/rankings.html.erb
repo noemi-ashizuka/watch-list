@@ -49,12 +49,20 @@
       <% end %>
     </div>
     
-    <h2 class="text-center mt-4" id="most-added">Most Rated Lists</h2> <!-- movie-list-->
-    
+    <h2 class="text-center mt-4" id="best-rated-lists">Most Rated Lists</h2> <!-- movie-list-->
+
+    <div class="list-card-container" id="list-form">
     <% @most_rated_lists.each do |list| %>
-    <%= list.name %>
-    <%= list.average_rating %>
+      <!-- <div data-aos="fade-up" data-aos-duration="2000"> -->
+        <%= link_to list_path(list) do %>
+          <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1334&q=80') %>)">
+            <h3><%= list.name %></h3>
+            <h3><i class="fas fa-star"></i> <%= list.average_rating %></h3>
+          </div>
+        <% end %>
+      <!-- </div> -->
     <% end %>
+  </div>
 
   </div>
 
@@ -63,6 +71,7 @@
       <div class="top-links">
         <a href="#top-5"><p>Top 5 movies</p></a>
         <a href="#most-added"><p>Most Added</p></a>
+        <a href="#best-rated-lists"><p>Highest Rated Lists</p></a>
       </div>
 
       <div class="bottom-link">
