@@ -47,7 +47,15 @@
           </div>
         </div> <!-- movie-card-->
       <% end %>
-    </div> <!-- movie-list-->
+    </div>
+    
+    <h2 class="text-center mt-4" id="most-added">Most Rated Lists</h2> <!-- movie-list-->
+    
+    <% @most_rated_lists.each do |list| %>
+    <%= list.name %>
+    <%= list.average_rating %>
+    <% end %>
+
   </div>
 
   <div class="col-md-3">

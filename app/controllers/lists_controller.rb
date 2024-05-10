@@ -29,6 +29,7 @@ class ListsController < ApplicationController
   def rankings
     @top_5_movies = Movie.top_5_rated
     @most_added_movies = Movie.most_added
+    @most_rated_lists = List.most_rated
   end
 
   private
