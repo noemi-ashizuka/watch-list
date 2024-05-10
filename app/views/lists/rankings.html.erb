@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/11702566/pexels-photo-11702566.jpeg?auto=compress&cs=tinysrgb&w=800'); background-position: 60% 30%; height: 300px;">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/11702566/pexels-photo-11702566.jpeg?auto=compress&cs=tinysrgb&w=800'); background-position: 60% 30%; height: 300px;" id="page-top">
 
   <div class="banner-text">
     <h1>Rankings</h1>
@@ -7,7 +7,7 @@
 
 <div class="row">
   <div class="col-12 col-md-9">
-    <h2 class="text-center mt-4">Top 5 rated movies</h2>
+    <h2 class="text-center mt-4" id="top-5">Top 5 rated movies</h2>
     <div class="movies-list">
       <% @top_5_movies.each do |movie| %>
         <div class="movie-card">
@@ -28,7 +28,7 @@
       <% end %>
     </div> <!-- movie-list-->
 
-    <h2 class="text-center mt-4">Most added movies</h2>
+    <h2 class="text-center mt-4" id="most-added">Most added movies</h2>
     <div class="movies-list">
       <% @most_added_movies.each do |movie| %>
         <div class="movie-card">
@@ -52,8 +52,14 @@
 
   <div class="col-md-3">
     <div class="menu-list">
-      <p>Top 5 movies</p>
-      <p>Most Added</p>
+      <div class="top-links">
+        <a href="#top-5"><p>Top 5 movies</p></a>
+        <a href="#most-added"><p>Most Added</p></a>
+      </div>
+
+      <div class="bottom-link">
+        <a href="#page-top"><span class="d-flex align-items-center"><i class='bx bx-fade-up-hover bxs-up-arrow-circle bx-md'></i></span></a>
+      </div>
     </div>
   </div>
 </div>

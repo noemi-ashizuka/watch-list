@@ -55,9 +55,23 @@
 
 .menu-list {
   padding: 20px;
-  background-color: $almost-white;
+  background-color: rgba(255, 255, 255, 0.258);
   height: 100vh;
   position: sticky;
   top: 0;
   bottom: 0;
+  display: flex;
+  flex-direction: column;
+  a {
+    color: $dark-blue;
+    // text-decoration: none;
+  }
+  .bottom-link a {
+    text-decoration: none;
+  }
+  // justify-content: space-between;
+}
+
+.top-links {
+  flex-grow: 1;
 }
