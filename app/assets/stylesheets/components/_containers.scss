@@ -44,7 +44,6 @@
   }
 }
 
-
 .reviews-container {
   margin-right: 1rem;
   margin-left: 1rem;
@@ -52,4 +51,13 @@
   // background-color: $dark-blue;
   color: $almost-white;
   padding: 16px;
+}
+
+.menu-list {
+  padding: 20px;
+  background-color: $almost-white;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  bottom: 0;
 }

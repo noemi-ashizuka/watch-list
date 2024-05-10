@@ -26,8 +26,9 @@ class ListsController < ApplicationController
     end
   end
 
-  def top_five
-    @movies = Movie.order(rating: :desc).take(5)
+  def rankings
+    @top_5_movies = Movie.top_5_rated
+    @most_added_movies = Movie.most_added
   end
 
   private

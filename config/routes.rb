@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   resources :bookmarks, only: :destroy
 
-  get "/top_movies", to: "lists#top_five"
+  get "/rankings", to: "lists#rankings", as: :rankings
 end

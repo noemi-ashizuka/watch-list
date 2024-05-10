@@ -1,0 +1,59 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/11702566/pexels-photo-11702566.jpeg?auto=compress&cs=tinysrgb&w=800'); background-position: 60% 30%; height: 300px;">
+
+  <div class="banner-text">
+    <h1>Rankings</h1>
+  </div>
+</div> <!-- banner -->
+
+<div class="row">
+  <div class="col-12 col-md-9">
+    <h2 class="text-center mt-4">Top 5 rated movies</h2>
+    <div class="movies-list">
+      <% @top_5_movies.each do |movie| %>
+        <div class="movie-card">
+          <div class="movie-image-container">
+            <img src="<%= movie.poster_url %>" alt="movie poster" class="movie-image">
+          </div>
+          <div class="movie-info">
+            <div class="title-wrapper">
+              <h3><%= movie.title %></h3>
+            </div>
+            <span class="rating" data-controller="color-rating" data-color-rating-target="rating"><%= movie.rating %></span>
+          </div>
+          
+          <div class="overview">
+            <%= movie.overview %>
+          </div>
+        </div> <!-- movie-card-->
+      <% end %>
+    </div> <!-- movie-list-->
+
+    <h2 class="text-center mt-4">Most added movies</h2>
+    <div class="movies-list">
+      <% @most_added_movies.each do |movie| %>
+        <div class="movie-card">
+          <div class="movie-image-container">
+            <img src="<%= movie.poster_url %>" alt="movie poster" class="movie-image">
+          </div>
+          <div class="movie-info">
+            <div class="title-wrapper">
+              <h3><%= movie.title %></h3>
+            </div>
+            <span class="rating" data-controller="color-rating" data-color-rating-target="rating"><%= movie.rating %></span>
+          </div>
+          
+          <div class="overview">
+            <%= movie.overview %>
+          </div>
+        </div> <!-- movie-card-->
+      <% end %>
+    </div> <!-- movie-list-->
+  </div>
+
+  <div class="col-md-3">
+    <div class="menu-list">
+      <p>Top 5 movies</p>
+      <p>Most Added</p>
+    </div>
+  </div>
+</div>
