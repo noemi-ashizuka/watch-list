@@ -4,6 +4,6 @@
       <%= f.input :rating, collection: (1..5).to_a, label: "Rate this movie list" %>
     </span>
     <%= f.input :content, label: 'Tell us what you think', as: :text, cols: 30, rows: 50 %>
-    <%= f.submit "Publish", class: 'btn btn-blue-slim', data: { target: 'resetform.button' } %>
+    <%= f.submit "Publish", class: 'btn btn-blue-slim', data: { resetform_target: 'button' } %>
   <% end %>
 </div>

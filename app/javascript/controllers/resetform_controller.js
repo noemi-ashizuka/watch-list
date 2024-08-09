@@ -8,12 +8,12 @@ export default class extends Controller {
   }
 
   reset(event) {
-    // event.currentTarget.reset()
+    event.currentTarget.reset()
     // this.buttonTarget.disabled = false
-    // this.starsTarget.querySelector('.br-current-rating').innerText = ''
-    // this.starsTarget.querySelectorAll('.br-widget a').forEach((star) => {
-    //   star.classList.remove('br-current')
-    //   star.classList.remove('br-selected')
-    // })
+    this.starsTarget.querySelector('.br-current-rating').innerText = ''
+    this.starsTarget.querySelectorAll('.br-widget a').forEach((star) => {
+      star.classList.remove('br-current')
+      star.classList.remove('br-selected')
+    })
   }
 }
