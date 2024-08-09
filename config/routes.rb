@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 
+  resources :movies, only: [:index]
   resources :bookmarks, only: :destroy
 
   get "/rankings", to: "lists#rankings", as: :rankings

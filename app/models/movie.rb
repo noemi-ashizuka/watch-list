@@ -5,6 +5,13 @@ class Movie < ApplicationRecord
   validates :title, uniqueness: true, presence: true
   validates :overview, presence: true
 
+  include PgSearch::Model
+  pg_search_scope :search_by_title,
+    against: [ :title],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   def self.top_5_rated
     order(rating: :desc).take(5)
   end

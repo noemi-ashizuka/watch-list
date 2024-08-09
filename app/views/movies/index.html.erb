@@ -1,0 +1,7 @@
+<h1>Results</h1>
+
+<div class="movies-list">
+  <% @movies.each do |movie| %>
+    <%= render "card", movie: movie %>
+  <% end %>
+</div>
