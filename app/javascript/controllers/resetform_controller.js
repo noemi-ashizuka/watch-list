@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ['button', 'stars']
   
   connect() {
-    console.log("connected");
+    // console.log("connected");
   }
 
   reset(event) {
