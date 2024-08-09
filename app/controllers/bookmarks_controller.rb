@@ -1,11 +1,13 @@
 class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    @list = List.find(params[:list_id])
-    @bookmark.list = @list
+    if params[:list_id]
+      @list = List.find(params[:list_id])
+      @bookmark.list = @list
+    end
     respond_to do |format|
       if @bookmark.save
-        format.html { redirect_to list_path(@list) }
+        format.html { redirect_to list_path(@bookmark.list) }
       else
         format.turbo_stream do
           render turbo_stream: turbo_stream.replace(
@@ -28,6 +30,6 @@ class BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:comment, :movie_id)
+    params.require(:bookmark).permit(:comment, :list_id, :movie_id)
   end
 end

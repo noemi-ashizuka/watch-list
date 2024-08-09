@@ -3,13 +3,13 @@
   <div class="banner-text">
     <h1>Curated movie lists</h1>
     <h3>Find the perfect movie for your movie night</h3>
-    <%= form_with url: movies_path, method: :get, class: "d-flex" do %>
+    <%= form_with url: movies_path, method: :get, class: "d-flex align-items-center" do %>
       <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
+            class: "form-control input-side",
+            placeholder: "What movie are you looking for?"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <%= submit_tag "Search", name: "", class: "btn btn-blue-slim btn-side" %>
     <% end %>
   </div>
 </div> <!-- banner -->

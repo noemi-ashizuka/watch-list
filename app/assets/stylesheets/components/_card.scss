@@ -1,13 +1,20 @@
 
-
 .movies-list {
   margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+
+  .movie-card-wrapper {
+    position: relative;
+    width: 300px;
+  }
 
   .movie-card {
-    width: 300px;
+    
     margin: 0.5rem;
     background-color: $gray-blue;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
@@ -36,7 +43,25 @@
         }
       }
 
+
       .remove-mark:hover {
+        opacity: 1;
+      }
+
+      .plus-mark {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 2;
+        color: $accent-blue;
+        opacity: 0.8;
+
+        i {
+          font-size: 24px;
+        }
+      }
+
+      .plus-mark:hover {
         opacity: 1;
       }
 
@@ -112,6 +137,16 @@
   .movie-card:hover .overview {
     transform: translateY(0);
   }
+}
+
+.form-overlay {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: $accent-blue;
+  z-index: 1;
+  background-color: $gray-blue;
+  padding: 16px;
 }
 
 .list-card-container {

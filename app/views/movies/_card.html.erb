@@ -1,15 +1,28 @@
-<div class="movie-card">
-  <div class="movie-image-container">
-    <img src="<%= movie.poster_url %>" alt="movie poster" class="movie-image">
-  </div>
-  <div class="movie-info">
-    <div class="title-wrapper">
-      <h3><%= movie.title %></h3>
+<div data-controller="bookmark-form" class="movie-card-wrapper">
+  <div class="movie-card">
+    <div class="movie-image-container">
+      <img src="<%= movie.poster_url %>" alt="movie poster" class="movie-image">
+      <span data-action="click->bookmark-form#reveal">
+        <i class="far fa-plus-square plus-mark"></i>
+      </span>
     </div>
-    <span class="rating" data-controller="color-rating" data-color-rating-target="rating"><%= movie.rating %></span>
+    <div class="movie-info">
+      <div class="title-wrapper">
+        <h3><%= movie.title %></h3>
+      </div>
+      <span class="rating" data-controller="color-rating" data-color-rating-target="rating"><%= movie.rating %></span>
+    </div>
+    
+    <div class="overview">
+      <%= movie.overview %>
+    </div>
+  </div> 
+  <div class="d-none form-overlay" data-bookmark-form-target="form">
+    <%= simple_form_for @bookmark do |f| %>
+    <%= f.association :movie, as: :hidden, input_html: { value: movie.id } %>
+    <%= f.association :list, input_html: { class: 'select2' } %>
+      <%= f.input :comment, as: :text %>
+      <%= f.submit class: 'btn btn-blue' %>
+    <% end %>
   </div>
-  
-  <div class="overview">
-    <%= movie.overview %>
-  </div>
-</div> <!-- movie-card-->
+</div>
