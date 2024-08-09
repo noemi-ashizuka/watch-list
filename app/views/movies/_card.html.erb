@@ -20,7 +20,7 @@
   <div class="d-none form-overlay" data-bookmark-form-target="form">
     <%= simple_form_for @bookmark do |f| %>
     <%= f.association :movie, as: :hidden, input_html: { value: movie.id } %>
-    <%= f.association :list, input_html: { class: 'select2' } %>
+    <%= f.association :list, input_html: { class: 'form-select' } %>
       <%= f.input :comment, as: :text %>
       <%= f.submit class: 'btn btn-blue' %>
     <% end %>
